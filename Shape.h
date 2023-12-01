@@ -6,7 +6,7 @@ using namespace std;
 
 class Shape
 {
-public:
+protected:
 	Position position;
 	char fillCharacter;
 
