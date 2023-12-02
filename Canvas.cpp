@@ -17,16 +17,28 @@ void Canvas::Clear()
 
 void Canvas::Add(Shape* shape)
 {
+	for (int i = 0; i < height; i++)
+		if (drawArea[i].empty())
+			throw "Canvas is not clear";
+
 	shape->Draw(drawArea);
 }
 
 void Canvas::Add(Group* group)
 {
+	for (int i = 0; i < height; i++)
+		if (drawArea[i].empty())
+			throw "Canvas is not clear";
+
 	group->Draw(drawArea);
 }
 
 void Canvas::Display()
 {
+	for (int i = 0; i < height; i++)
+		if (drawArea[i].empty())
+			throw "Canvas is not clear";
+
 	for (int i = 0; i < height; i++)
 	{
 		cout << drawArea[i] << endl;

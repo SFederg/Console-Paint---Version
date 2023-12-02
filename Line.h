@@ -6,14 +6,14 @@ class Line : public Shape
 private:
 	int countPoints;
 	double angleFactor;
-	int isArgumentConst;
+	bool isArgumentConst;
 
 public:
-	Line(int countPoints, double angleFactor, char fillCharacter, Position position, int isArgumentConst) : Shape(position, fillCharacter)
+	Line(int countPoints, double angleFactor, char fillCharacter, Position position, bool isArgumentConst) : Shape(position, fillCharacter)
 	{
-		if (countPoints <= 0 && (isArgumentConst > 1 || isArgumentConst < 0))
+		if (countPoints <= 0)
 		{
-			throw "Incorrect arguments";
+			throw invalid_argument("countPoints can't be less or equal zero");
 		}
 
 		this->countPoints = countPoints;

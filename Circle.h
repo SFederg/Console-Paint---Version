@@ -10,7 +10,7 @@ public:
 	{
 		if (radius < 3)
 		{
-			throw "Incorrect radius";
+			throw invalid_argument("radius can't be less than 3");
 		}
 
 		this->radius = radius;
