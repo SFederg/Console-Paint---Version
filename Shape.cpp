@@ -12,3 +12,13 @@ Shape::Shape(Position position, char fillCharacter)
 	this->position = position;
 	this->fillCharacter = fillCharacter;
 }
+
+Position Shape::GetPosition()
+{
+	return position;
+}
+
+char Shape::GetFillCharacter()
+{
+	return fillCharacter;
+}

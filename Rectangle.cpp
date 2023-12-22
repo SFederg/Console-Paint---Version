@@ -15,3 +15,10 @@ void Rectangle::Draw(string* drawArea)
 	thirdSide->Draw(drawArea);
 	fourthSide->Draw(drawArea);
 }
+
+Rectangle& Rectangle::operator =(Shape* shape)
+{
+	position = shape->GetPosition();
+	fillCharacter = shape->GetFillCharacter();
+	return *this;
+}

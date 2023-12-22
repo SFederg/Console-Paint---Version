@@ -33,4 +33,6 @@ public:
 	~Triangle();
 
 	void Draw(string* drawArea) override;
+
+	Triangle& operator =(Shape* shape);
 };

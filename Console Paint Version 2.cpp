@@ -3,6 +3,7 @@
 #include "Rectangle.h"
 #include "Circle.h"
 #include "Group.h"
+#include "Finder.h"
 #include <vector>
 
 int main()
@@ -26,6 +27,9 @@ int main()
         position = { 75, 30 };
         Triangle triangle1(9, '0', position);
 
+        Shape* shape5 = &triangle1;
+        line2 = shape5;
+
         position = { 19, 11 };
         Triangle triangle(21, '0', position);
 
@@ -41,28 +45,17 @@ int main()
 
         vector<vector<Shape*>> shapes = {lines, triangles, circles, rectangles};
 
-        Canvas::Clear();
+        Canvas canvas(100, 50, ' ');
 
         for (int i = 0; i < shapes.size(); i++)
         {
             for (int j = 0; j < shapes[i].size(); j++)
             {
-                Canvas::Add(shapes[i][j]);
+                canvas.Add(shapes[i][j]);
             }
         }
 
-        Canvas::Display();
-        Canvas::Clear();
-
-        Group group;
-        group.TryAddShape(shapes[1][1]);
-        group.TryAddShape(shapes[3][0]);
-
-        Canvas::Add(&group);
-        Canvas::Display();
-
-        Shape* shape1 = group.GetShapePointer(0);
-        Shape& shape2 = group.GetShapeReference(1);
+        canvas << canvas;
     }
     catch (const invalid_argument& e)
     {

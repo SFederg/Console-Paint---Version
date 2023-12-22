@@ -33,3 +33,10 @@ void Line::Draw(string* drawArea)
 		}
 	}
 }
+
+Line& Line::operator =(Shape* shape)
+{
+	position = shape->GetPosition();
+	fillCharacter = shape->GetFillCharacter();
+	return *this;
+}

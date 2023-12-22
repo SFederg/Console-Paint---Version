@@ -1,6 +1,19 @@
 #include "Canvas.h"
 
-string* Canvas::drawArea = new string[Canvas::height];
+Canvas::Canvas(int width, int height, char fillCharacter)
+{
+	this->width = width;
+	this->height = height;
+	this->fillCharacter = fillCharacter;
+	drawArea = new string[Canvas::height];
+	Clear();
+}
+
+Canvas::~Canvas()
+{
+	delete drawArea;
+}
+
 
 void Canvas::Clear()
 {
@@ -43,4 +56,13 @@ void Canvas::Display()
 	{
 		cout << drawArea[i] << endl;
 	}
+}
+
+Canvas& Canvas::operator<<(Canvas canvas)
+{
+	for (int i = 0; i < height; i++)
+	{
+		cout << drawArea[i] << endl;
+	}
+	return *this;
 }

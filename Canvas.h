@@ -8,16 +8,22 @@ using namespace std;
 class Canvas
 {
 private:
-	static const int width = 100;
-	static const int height = 50;
-	static const char fillCharacter = ' ';
-	static string *drawArea;
+	int width;
+	int height;
+	char fillCharacter = ' ';
+	string *drawArea;
 public:
-	static void Clear();
+	Canvas(int width, int height, char fillCharacter);
 
-	static void Add(Shape* shape);
+	~Canvas();
 
-	static void Add(Group* group);
+	void Clear();
 
-	static void Display();
+	void Add(Shape* shape);
+
+	void Add(Group* group);
+
+	void Display();
+
+	Canvas& operator<<(Canvas canvas);
 };

@@ -43,4 +43,6 @@ public:
 	~Rectangle();
 
 	void Draw(string* drawArea) override;
+
+	Rectangle& operator =(Shape* shape);
 };

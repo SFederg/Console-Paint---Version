@@ -15,5 +15,9 @@ public:
 
 	Shape(Position position, char fillCharacter);
 
+	Position GetPosition();
+
+	char GetFillCharacter();
+
 	virtual void Draw(string* drawArea) = 0;
 };

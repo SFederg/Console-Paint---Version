@@ -25,3 +25,10 @@ void Circle::Draw(string* drawArea)
 		}
 	}
 }
+
+Circle& Circle::operator =(Shape* shape)
+{
+	position = shape->GetPosition();
+	fillCharacter = shape->GetFillCharacter();
+	return *this;
+}

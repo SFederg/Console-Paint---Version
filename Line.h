@@ -24,4 +24,6 @@ public:
 	~Line();
 
 	void Draw(string* drawArea) override;
+
+	Line& operator =(Shape* shape);
 };

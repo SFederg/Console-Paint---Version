@@ -19,4 +19,6 @@ public:
 	~Circle();
 
 	void Draw(string* drawArea) override;
+
+	Circle& operator =(Shape* shape);
 };

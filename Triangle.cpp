@@ -13,3 +13,10 @@ void Triangle::Draw(string* drawArea)
 	secondSide->Draw(drawArea);
 	thirdSide->Draw(drawArea);
 }
+
+Triangle& Triangle::operator =(Shape* shape)
+{
+	position = shape->GetPosition();
+	fillCharacter = shape->GetFillCharacter();
+	return *this;
+}
