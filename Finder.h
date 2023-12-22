@@ -1,5 +1,6 @@
 #pragma once
 #include <vector>
+#include <typeinfo>
 
 template<typename T, typename R>
 class Finder
@@ -22,7 +23,7 @@ public:
 		for (int i = 0; i < elements.size(); i++)
 		{
 			T el = elements[i];
-			if (typename el == typename element) 
+			if (typeid(el).name() == typeid(element).name())
 			{
 				for (int j = 0; j < elements.size()-1; j++)
 				{
